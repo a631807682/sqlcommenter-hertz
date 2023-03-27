@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+
+  mysql:
+    image: 'mysql/mysql-server:latest'
+    command:
+      --general-log=TRUE
+      --general-log-file=/var/lib/mysql/mysql-log.log
+    ports:
+      - 8910:3306
+    environment:
+      - MYSQL_DATABASE=sqlcommenter
+      - MYSQL_USER=sqlcommenter
+      - MYSQL_PASSWORD=sqlcommenter
+      - MYSQL_RANDOM_ROOT_PASSWORD="yes"
